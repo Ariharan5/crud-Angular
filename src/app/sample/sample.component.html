@@ -1,0 +1,42 @@
+<form [formGroup]="form" class="container">
+    <div>
+        <label>UserName</label>
+        <input type="text" 
+        placeholder="UserName"
+         class="form-control" 
+         formControlName="username">
+    </div>
+    <div>
+        <label>password</label>
+        <input type="text" class="form-control" 
+        placeholder="Password"
+        formControlName="password">
+
+    </div>
+    <button class="btn btn-success  mt-2" (click)="Create()">create</button>
+</form>
+
+
+
+
+<table class="table">
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Password</th>
+        <th scope="col">Action</th>
+    </tr>
+    <tr *ngFor="let user of samples">
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.password}}</td>
+        <td>
+            <button class="btn btn-danger bg-danger" (click)="deletePost(user.id)">Delete</button>
+            <button class="btn btn-danger bg-warning" (click)="update(user.id)">Update</button>
+            <button class="btn btn-danger bg-info" (click)="edit(user.id)">Edit</button>
+        </td>
+
+
+    </tr>
+
+</table>

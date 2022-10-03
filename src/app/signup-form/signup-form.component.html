@@ -1,0 +1,58 @@
+<!-- Login form  -->
+<form [formGroup]="signup" (ngSubmit)="getdata()">
+    <h1> Login Page </h1>
+    <div class="loginstyle mt-3">
+        <!-- for the user details -->
+        <div class="form-group">
+            <label>User Name</label>
+            <input type="text" formControlName="username" placeholder="Enter the User Name" class="form-control size">
+
+            <div class="alert alert-danger popupmsg" role="alert" *ngIf='vuser && vuser.invalid && vuser.touched'>
+                Please enter valid username</div>
+        </div>
+
+        <!--  for the password details -->
+        <div class="form-group">
+            <label> Password</label>
+            <input type="text" formControlName="password" placeholder="Enter the Password" class="form-control size">
+            <div class="alert alert-danger popupmsg" role="alert" *ngIf='vpass && vpass.invalid && vpass.touched'>Please
+                enter valid Password</div>
+        </div>
+
+
+        <!-- Dynamic button for creating and Updating the user Details  -->
+        <div *ngIf="showCreate">
+            <button [disabled]="signup.invalid" (click)="createuserdetails()"
+                class="btn btn-success bi bi-person-plus mt-3"> Create
+            </button>
+        </div>
+        <div *ngIf="showUpdate">
+            <button [disabled]="signup.invalid" 
+            (click)="updateuserData()" class=" bi bi-arrow-repeat btn btn-warning mt-3"> Update
+            </button>
+        </div>
+    </div>
+</form>
+
+<!-- creating table to show the data feched -->
+<table class="table mt-3">
+    <thead>
+        <tr class="bg-light">
+            <th scope="col">ID</th>
+            <th scope="col">User</th>
+            <th scope="col">Password</th>
+            <th scop="col">Edit/Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let users of userData">
+            <td>{{users.id}}</td>
+            <td>{{users.username}}</td>
+            <td>{{users.password}}</td>
+            <td>
+                <button class="btn btn-info bi bi-pen" (click)="editUser(users)"> Edit </button> ||
+                <button class="bi  bi-trash3-fill btn btn-danger me-2" (click)="removeUser(users.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

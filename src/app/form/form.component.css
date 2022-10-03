@@ -1,0 +1,24 @@
+h1 {
+    text-align: center;
+}
+.form-control.ng-dirty.ng-touched.ng-invalid{
+    border: 2px solid red;
+}
+.form-control.ng-dirty.ng-touched.ng-valid{
+    border: 2px solid green;
+}
+
+.student-form {
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-top: 1%;
+    border-radius: 14px;
+    box-shadow: 0px 0px 33px 0px black;
+    
+}
+.studenterror{
+    color: red;
+}
+.student-form{
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}

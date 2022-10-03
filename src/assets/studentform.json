@@ -1,0 +1,39 @@
+{
+  "Studentdetails": [
+    {
+      "id": 1,
+      "firstName": "praveen",
+      "lastName": "Raj",
+      "mobile": "1234567890",
+      "email": "praveen@gmail.com"
+    },
+    {
+      "id": 2,
+      "firstName": "Abdul",
+      "lastName": "Khaliths",
+      "mobile": "1234567890",
+      "email": "abdul@gmail.com"
+    },
+    {
+      "id": 3,
+      "firstName": "danush",
+      "lastName": "rajas",
+      "mobile": "1234567890",
+      "email": "d47@gmail.com"
+    },
+    {
+      "id": 5,
+      "firstName": "vijay",
+      "lastName": "josephs",
+      "mobile": "2345678909",
+      "email": "vijay@gmail.com"
+    },
+    {
+      "id": 4,
+      "firstName": "vetri",
+      "lastName": "marran",
+      "mobile": "0987654321",
+      "email": "vetri@gmail.com"
+    }
+  ]
+}

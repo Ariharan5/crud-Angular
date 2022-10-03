@@ -1,0 +1,18 @@
+h1 {
+  text-align: center;
+}
+.size {
+  width: 40%;
+}
+.loginstyle {
+  margin-left: 39%;
+}
+.form-control.ng-dirty.ng-touched.ng-invalid {
+  border: 2px solid red;
+}
+.form-control.ng-dirty.ng-touched.ng-valid {
+  border: 2px solid green;
+}
+.popupmsg {
+  color: red;
+}

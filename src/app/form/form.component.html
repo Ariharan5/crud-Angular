@@ -1,0 +1,91 @@
+
+
+<!-- student form -->
+<section class="student-form">
+    <div class="container">
+        <div class="row">
+            <h1>Student Detail Form</h1>
+            <!-- form -->
+            <form [formGroup]="studentForm" (ngSubmit)="studentDetail()" >
+                    <!-- First Name -->
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text"
+                         placeholder="Enter firstname"
+                          formControlName="firstName"
+                           class="form-control">
+          <span class="studenterror"
+           *ngIf="fname && (fname.invalid && fname.touched)">Input Not Valid</span>                    
+                    </div>
+
+                    <!-- Last name -->
+                    <div class="form-group mt-2">
+                        <label for="lastName">Last Name</label>
+                        <input type="text"
+                         placeholder="Enter lastname"
+                         formControlName="lastName" 
+                          class="form-control">
+                        <span class="studenterror" *ngIf="lname && (lname.invalid && lname.touched)">Input Not Valid</span>
+                    </div>
+
+                    <!-- Mobile  -->
+                    <div class="form-group mt-2">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="text" placeholder="Enter mobile number"  formControlName="mobile" class="form-control">
+                        <span class="studenterror"  
+                        *ngIf="mobilenumber && mobilenumber.invalid && mobilenumber.touched">Enter valid mobile number</span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group mt-2">
+                        <label for="email">Email-Id</label>
+                        <input type="text"
+                         placeholder="Enter email-id" 
+                         formControlName="email"
+                          class="form-control">
+                        <span class="studenterror" 
+                        *ngIf="mailid && mailid.invalid && mailid.touched">Enter Valid mail-id</span>
+                    </div>
+                <!-- login button -->
+                <button class="btn btn-primary mt-4 mb-2" 
+                [disabled]="studentForm.invalid"
+                 (click)="createStudentDetails()"
+                 *ngIf="showCreate"
+                 >Submit </button>
+
+                 <button class="btn btn-warning mt-4 mb-2" 
+                 (click)="updateStudentDetails()"
+                 *ngIf="showUpdate"
+                 [disabled]="studentForm.invalid"
+                 >Update</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- table to display the data -->
+<table class="table mt-3 bg-light">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Email-Id</th>
+            <th scope="col">Edit/delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of studentData">
+            <td>{{student.id}}</td>
+            <td>{{student.firstName}}</td>
+            <td>{{student.lastName}}</td>
+            <td>{{student.mobile}}</td>
+            <td>{{student.email}}</td>
+            <td>
+                <button class="btn btn-info me-1" (click)="editStudentDetails(student)" >Edit</button>||
+                <button class="btn btn-danger me-1" (click)="deleteStudentDetails(student.id)" >Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

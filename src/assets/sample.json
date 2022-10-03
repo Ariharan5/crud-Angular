@@ -1,0 +1,19 @@
+{
+  "sample": [
+    {
+      "username": "kalai@gmail.ocm",
+      "password": "kalai",
+      "id": 1
+    },
+    {
+      "username": "tamil@gmail.ocm",
+      "password": "tamil",
+      "id": 2
+    },
+    {
+      "username": "Englisg@gmail.com",
+      "password": "english",
+      "id": 3
+    }
+  ]
+}
